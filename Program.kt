@@ -1,0 +1,101 @@
+name: Build & Release APK
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'README.md'
+      - '.gitignore'
+  workflow_dispatch:   # consente di lanciare il workflow manualmente dall'interfaccia GitHub
+
+# Permessi necessari per creare release
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Compila e firma APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout del codice
+        uses: actions/checkout@v4
+
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Verifica presenza dei secret della keystore
+        run: |
+          missing=()
+          [ -z "${{ secrets.KEYSTORE_BASE64 }}" ] && missing+=("KEYSTORE_BASE64")
+          [ -z "${{ secrets.KEYSTORE_PASSWORD }}" ] && missing+=("KEYSTORE_PASSWORD")
+          [ -z "${{ secrets.KEY_ALIAS }}" ] && missing+=("KEY_ALIAS")
+          [ -z "${{ secrets.KEY_PASSWORD }}" ] && missing+=("KEY_PASSWORD")
+          if [ ${#missing[@]} -ne 0 ]; then
+            echo "::error::Secret mancanti: ${missing[*]}. Caricali in Settings > Secrets and variables > Actions."
+            exit 1
+          fi
+          echo "Tutti i secret necessari sono presenti."
+
+      - name: Compila APK release (firmato)
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: gradle assembleRelease --no-daemon --stacktrace
+
+      - name: Rinomina APK
+        id: rename
+        run: |
+          mkdir -p artifacts
+          # Trova l'APK firmato (esclude eventuali -unsigned)
+          src=$(find app/build/outputs/apk/release -name "*.apk" ! -name "*unsigned*" | head -n1)
+          if [ -z "$src" ]; then
+            echo "::error::APK firmato non trovato."
+            exit 1
+          fi
+          version_name=$(grep "versionName" app/build.gradle.kts | head -n1 | sed 's/.*"\(.*\)".*/\1/')
+          dest_name="VisionairGS-v${version_name}-build${{ github.run_number }}.apk"
+          cp "$src" "artifacts/$dest_name"
+          echo "apk_path=artifacts/$dest_name" >> $GITHUB_OUTPUT
+          echo "apk_name=$dest_name" >> $GITHUB_OUTPUT
+          echo "version_name=$version_name" >> $GITHUB_OUTPUT
+          echo "APK pronto: $dest_name"
+
+      - name: Carica APK come artifact (scaricabile da Actions)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.rename.outputs.apk_name }}
+          path: ${{ steps.rename.outputs.apk_path }}
+          retention-days: 90
+
+      - name: Crea release GitHub con APK allegato
+        if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.rename.outputs.version_name }}-build${{ github.run_number }}
+          name: Visionair Golden Stream v${{ steps.rename.outputs.version_name }} (build ${{ github.run_number }})
+          body: |
+            APK firmato pronto all'installazione. 
+            
+            Per installare:
+            1. Scarica il file `.apk` qui sotto
+            2. Sul dispositivo Android: abilita "Installa da fonti sconosciute" per il browser/file manager
+            3. Tocca il file per installare
+            
+            Compatibile con Android 5.0 (Lollipop) e successivi, Android TV, Fire TV, Android Auto.
+          files: ${{ steps.rename.outputs.apk_path }}
+          generate_release_notes: true
+          fail_on_unmatched_files: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

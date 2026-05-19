@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Visionair Golden Stream</string>
+    <string name="station_tagline">Border music · World · Jazz · Canzone d\'autore</string>
+    <string name="action_play">Riproduci</string>
+    <string name="action_pause">Pausa</string>
+    <string name="on_air_now">In onda ora</string>
+    <string name="host_prefix">Con %1$s</string>
+    <string name="host_bio_label">Il conduttore</string>
+    <string name="default_program_description">La programmazione musicale di Visionair continua.</string>
+</resources>
