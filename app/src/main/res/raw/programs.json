@@ -1,0 +1,15 @@
+{
+  "_comment": "Palinsesto della radio. Modifica gli slot orari sotto. Formato: day = MONDAY|TUESDAY|WEDNESDAY|THURSDAY|FRIDAY|SATURDAY|SUNDAY; start = HH:MM (24h); durationMinutes = durata in minuti. Tutti gli orari sono interpretati nel fuso Europe/Rome.",
+  "programs": [
+    {
+      "id": "frequenze_nomadi",
+      "title": "Frequenze Nomadi",
+      "host": "Alberto Menenti",
+      "description": "Border music, contaminazioni, ethno, world, jazz e canzone d'autore. Un viaggio sonoro fra confini geografici e culturali.",
+      "hostBio": "Alberto Menenti è formatore in performance musicale e conduttore radiofonico. Su Visionair cura Frequenze Nomadi, un programma dedicato alla musica di frontiera: contaminazioni, suoni etnici, world music, jazz e canzone d'autore.",
+      "slots": [
+        {"day": "THURSDAY", "start": "21:00", "durationMinutes": 60}
+      ]
+    }
+  ]
+}
