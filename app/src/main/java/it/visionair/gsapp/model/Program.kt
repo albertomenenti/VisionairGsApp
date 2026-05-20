@@ -2,39 +2,76 @@ package it.visionair.gsapp.model
 
 import java.time.DayOfWeek
 import java.time.LocalTime
+import java.time.format.TextStyle
+import java.util.Locale
 
-/**
- * Un programma del palinsesto.
- *
- * @param id            identificativo univoco interno
- * @param title         titolo del programma (es. "Frequenze Nomadi")
- * @param host          conduttore o conduttori (es. "Alberto Menenti")
- * @param description   breve descrizione del programma
- * @param hostBio       bio del/dei conduttori
- * @param slots         fasce orarie settimanali in cui va in onda
- */
+/** Singolo conduttore della radio. */
+data class Speaker(
+    val id: String,
+    val name: String,
+    val bio: String = "",
+    /** Nome del drawable della foto (senza prefisso path). Vuoto = nessuna foto. */
+    val photo: String = ""
+)
+
+/** Programma del palinsesto. */
 data class Program(
     val id: String,
     val title: String,
-    val host: String,
+    val speakerIds: List<String>,
     val description: String,
-    val hostBio: String,
     val slots: List<TimeSlot>
 )
 
 /**
- * Una fascia oraria settimanale: giorno della settimana + orario di inizio + durata in minuti.
+ * Fascia oraria settimanale: gruppo di giorni + orario di inizio + durata in minuti.
+ * Supporta slot che attraversano la mezzanotte (es. 23:00–01:00).
  */
 data class TimeSlot(
-    val day: DayOfWeek,
+    val days: List<DayOfWeek>,
     val start: LocalTime,
     val durationMinutes: Int
 ) {
     fun contains(weekDay: DayOfWeek, time: LocalTime): Boolean {
-        if (weekDay != day) return false
-        val end = start.plusMinutes(durationMinutes.toLong())
-        // Slot che attraversano la mezzanotte non sono gestiti qui per semplicità;
-        // se serve, si spezzano in due slot in palinsesto.
-        return !time.isBefore(start) && time.isBefore(end)
+        val curMin = time.hour * 60 + time.minute
+        val startMin = start.hour * 60 + start.minute
+        val endMin = startMin + durationMinutes
+        val dayMin = 24 * 60
+
+        return if (endMin <= dayMin) {
+            weekDay in days && curMin in startMin until endMin
+        } else {
+            if (weekDay in days && curMin >= startMin) return true
+            val prevDay = weekDay.minus(1)
+            prevDay in days && curMin < (endMin - dayMin)
+        }
     }
+
+    /** Rappresentazione leggibile per UI, es. "Tutti i giorni 09:00–11:00" o "Lun, Mer 14:00–15:30". */
+    fun toReadable(locale: Locale = Locale.ITALIAN): String {
+        val endTime = LocalTime.of(
+            ((start.hour * 60 + start.minute + durationMinutes) / 60) % 24,
+            (start.minute + durationMinutes) % 60
+        )
+        val daysLabel = when {
+            days.size == 7 -> "Tutti i giorni"
+            days.size == 5 && DayOfWeek.SATURDAY !in days && DayOfWeek.SUNDAY !in days -> "Lun-Ven"
+            days.size == 2 && DayOfWeek.SATURDAY in days && DayOfWeek.SUNDAY in days -> "Sab-Dom"
+            else -> days.sorted().joinToString(", ") {
+                it.getDisplayName(TextStyle.SHORT, locale).replaceFirstChar { c -> c.uppercase() }
+            }
+        }
+        return "$daysLabel  %02d:%02d–%02d:%02d".format(
+            start.hour, start.minute, endTime.hour, endTime.minute
+        )
+    }
+}
+
+/** Snapshot del "cosa è in onda ora", con conduttori risolti. */
+data class NowPlaying(
+    val program: Program,
+    val speakers: List<Speaker>
+) {
+    val speakerNames: String
+        get() = speakers.joinToString(" · ") { it.name }
 }

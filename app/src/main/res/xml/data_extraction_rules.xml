@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<data-extraction-rules>
-    <cloud-backup>
-        <!-- Nessun dato locale da estrarre/clonare -->
-    </cloud-backup>
-    <device-transfer>
-        <!-- Nessun dato locale da estrarre/clonare -->
-    </device-transfer>
-</data-extraction-rules>

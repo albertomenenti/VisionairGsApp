@@ -13,8 +13,8 @@ android {
         applicationId = "it.visionair.gsapp"
         minSdk = 21          // Android 5.0 (Lollipop) - copre 99%+ dei dispositivi attivi
         targetSdk = 34       // Android 14
-        versionCode = 1
-        versionName = "1.0.0"
+        versionCode = 3
+        versionName = "1.2.0"
 
         // Locale di fallback: italiano
         resourceConfigurations.addAll(listOf("it", "en"))
@@ -107,6 +107,11 @@ dependencies {
     implementation("androidx.media3:media3-session:$media3")
     implementation("androidx.media3:media3-datasource-okhttp:$media3")
     // Nota: il parsing del palinsesto JSON usa org.json (incluso in Android), niente librerie extra.
+
+    // RecyclerView per le liste conduttori e programmi
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    // Fragment KTX (gestione nav tra tab)
+    implementation("androidx.fragment:fragment-ktx:1.8.5")
 
     // Desugaring per usare java.time su API 21+
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.2")

@@ -1,14 +1,288 @@
 {
-  "_comment": "Palinsesto della radio. Modifica gli slot orari sotto. Formato: day = MONDAY|TUESDAY|WEDNESDAY|THURSDAY|FRIDAY|SATURDAY|SUNDAY; start = HH:MM (24h); durationMinutes = durata in minuti. Tutti gli orari sono interpretati nel fuso Europe/Rome.",
+  "_comment": "Palinsesto Visionair Golden Stream (fonte: sito Lovable). Le descrizioni quando disponibili sono tratte dagli abstract ufficiali. Modificare 'days' e orari per palinsesto variabile per giorno.",
   "programs": [
+    {
+      "id": "nightskyline",
+      "title": "Nightskyline",
+      "speakerIds": [
+        "lancastre_de_finisterre"
+      ],
+      "description": "Un viaggio nella notte in compagnia della musica più elegante e raffinata. Lancastre de Finisterre ogni notte sceglie e programma la musica della notte: il meglio degli ultimi 50 anni, curato in una sequenza che crea atmosfere affascinanti. Lounge, neo-classical, elettronica, chill music, new age e ambient si susseguono armonicamente, fondendosi con ricordi e parole in un equilibrio tra sogno e viaggio. Che è, in fondo, la magia della notte.",
+      "slots": [
+        {
+          "days": "DAILY",
+          "start": "01:00",
+          "durationMinutes": 270
+        }
+      ]
+    },
+    {
+      "id": "goodmorning_visionair",
+      "title": "Goodmorning Visionair",
+      "speakerIds": [
+        "massimo_rocca",
+        "franz_di_maggio"
+      ],
+      "description": "Massimo Rocca e Franz Di Maggio rispondono all'urlo di Carlo Valli, mitico doppiatore di Robin Williams in \"Goodmorning Vietnam\". L'inizio delle dirette del mattino di Visionair Radio parte con una carezza di poesia e la rasoiata di un minuto, il \"contropelo\" di Massimo Rocca. Segue l'almanacco delle rubriche e la musica dal ritmo elegante di Disco Vintage.",
+      "slots": [
+        {
+          "days": "DAILY",
+          "start": "05:30",
+          "durationMinutes": 60
+        }
+      ]
+    },
+    {
+      "id": "pirati_sostenibili",
+      "title": "Pirati Sostenibili / Radio In2Parole",
+      "speakerIds": [
+        "cristian_tava"
+      ],
+      "description": "Cristian Tava, fondatore del progetto \"Villaggio Saggio\", promuove da anni l'economia circolare e sostenibile per guardare il mondo da una prospettiva diversa, creativa, con un occhio curioso come un bambino. La comunicazione è la base del cambiamento e la voce di Cristian racconta la visione di un nuovo mondo. Nella seconda parte del talk si alternano le \"voci del villaggio\" in due parole.",
+      "slots": [
+        {
+          "days": "DAILY",
+          "start": "06:30",
+          "durationMinutes": 150
+        }
+      ]
+    },
+    {
+      "id": "no_comment",
+      "title": "No Comment",
+      "speakerIds": [
+        "massimo_rocca",
+        "franz_di_maggio",
+        "ernesto_bassignano",
+        "stefano_vernole",
+        "ettore_gatti",
+        "pier_augusto_stagi",
+        "italo_cucci"
+      ],
+      "description": "Analisi politica, economia, geopolitica, breaking news da agenzie e giornali di tutto il mondo, con un pizzico di pepe dalla satira di Ernesto Bassignano. Commentiamo le notizie di giornata mentre Franz Di Maggio scandisce i ritmi con musica e interazione con gli ascoltatori; Massimo Rocca prova a capirci qualcosa, talvolta riuscendoci. Nella seconda parte, giorno per giorno si alternano ospiti che affrontano i temi del giorno aggiungendo volta per volta ingredienti culturali, sportivi, satirici.",
+      "slots": [
+        {
+          "days": "DAILY",
+          "start": "09:00",
+          "durationMinutes": 120
+        }
+      ]
+    },
+    {
+      "id": "torno_subito",
+      "title": "Torno Subito",
+      "speakerIds": [
+        "marco_mangiarotti",
+        "franz_di_maggio"
+      ],
+      "description": "Nel Bar Mocambo dalle serrande abbassate si scorgono le sagome di due personaggi, probabilmente il proprietario e il barista, intenti in una discussione di fronte al caffè di una macchina che sbuffa ancora. Un programma in cui cultura, ironia e molta complice amicizia fanno la differenza.",
+      "slots": [
+        {
+          "days": "DAILY",
+          "start": "11:00",
+          "durationMinutes": 60
+        }
+      ]
+    },
+    {
+      "id": "sheroes",
+      "title": "Sheroes",
+      "speakerIds": [
+        "cinzia_pilo",
+        "franz_di_maggio"
+      ],
+      "description": "Donne che hanno cambiato la musica rock e il mondo. Un viaggio nella musica rock attraverso le sue eroine: quelle che non hanno solo cantato, ma hanno aperto varchi, scardinato gerarchie, riscritto immaginari. Dalle pioniere degli anni Sessanta alle visionarie di oggi, sei decenni di rivoluzioni culturali raccontati attraverso Janis Joplin, Patti Smith, Joan Jett, Grace Jones, Dolores O'Riordan, Alanis Morissette, Amy Winehouse, Skin, Florence Welch e altre 27 protagoniste.",
+      "slots": [
+        {
+          "days": "DAILY",
+          "start": "12:00",
+          "durationMinutes": 30
+        }
+      ]
+    },
+    {
+      "id": "notiziario_radiobullets",
+      "title": "Notiziario Radiobullets",
+      "speakerIds": [
+        "barbara_schiavulli"
+      ],
+      "description": "Il notiziario differente: geopolitica, politiche di genere, questioni sociali. Sintesi e approfondimento nello spazio gestito dalla giornalista, corrispondente di guerra e attivista Barbara Schiavulli e dalla redazione di Radiobullets.",
+      "slots": [
+        {
+          "days": "DAILY",
+          "start": "12:30",
+          "durationMinutes": 30
+        }
+      ]
+    },
+    {
+      "id": "le_strade_bianche_del_gusto",
+      "title": "Le Strade Bianche del Gusto",
+      "speakerIds": [
+        "daniele_lucca"
+      ],
+      "description": "Storie di paesaggi unici e di grandi passioni raccontate da Daniele Lucca. Viaggi radiofonici slow alla scoperta dei \"terroir\" italiani insieme ai protagonisti del vino, del buon cibo, dell'arte e della cultura territoriale italiana. Gli itinerari alternativi, i percorsi più slow, sconosciuti ai più, attraverso la voce dei loro protagonisti, in cerca del \"buono, pulito e giusto\", di esperienze uniche e sorprendenti. Il tutto condito da buona musica — ché senza musica non si viaggia.",
+      "slots": [
+        {
+          "days": "DAILY",
+          "start": "13:00",
+          "durationMinutes": 60
+        }
+      ]
+    },
+    {
+      "id": "aggiungi_un_posto_alla_consolle",
+      "title": "Aggiungi un posto alla Consolle",
+      "speakerIds": [
+        "franco_miele"
+      ],
+      "description": "Lo spazio in cui opinionisti e giornalisti intervengono nella rubrica dedicata al calcio vintage. Notizie, aneddoti sportivi e qualche sorpresa.",
+      "slots": [
+        {
+          "days": "DAILY",
+          "start": "14:00",
+          "durationMinutes": 60
+        }
+      ]
+    },
+    {
+      "id": "groove_is_in_the_heart",
+      "title": "Groove Is In The Heart",
+      "speakerIds": [
+        "datta",
+        "de_stefani"
+      ],
+      "description": "I ritmi degli anni '90 raccontati e suonati da Sergio Datta e Maurizio De Stefani. Tra vinili, hit da dancefloor e storie vissute, un viaggio musicale e culturale che restituisce l'energia autentica di un decennio indimenticabile, firmato da due DJ che ne hanno scritto la storia.",
+      "slots": [
+        {
+          "days": "DAILY",
+          "start": "15:00",
+          "durationMinutes": 60
+        }
+      ]
+    },
+    {
+      "id": "disco_vintage_supercharts",
+      "title": "Disco Vintage Supercharts",
+      "speakerIds": [
+        "giorgio_terzano",
+        "renzo_costa"
+      ],
+      "description": "Condotto da Renzo Costa e Giorgio Terzano: un viaggio tra le classifiche del passato, con spunti dedicati a notizie su costumi e mode di quegli anni, senza dimenticare le classifiche attuali con i successi del momento.",
+      "slots": [
+        {
+          "days": "DAILY",
+          "start": "16:00",
+          "durationMinutes": 60
+        }
+      ]
+    },
+    {
+      "id": "classic_rock_on_air",
+      "title": "Classic Rock On Air",
+      "speakerIds": [
+        "renato_marengo",
+        "marco_testoni"
+      ],
+      "description": "",
+      "slots": [
+        {
+          "days": "DAILY",
+          "start": "17:00",
+          "durationMinutes": 30
+        }
+      ]
+    },
+    {
+      "id": "trans_europe_express",
+      "title": "Trans Europe Express",
+      "speakerIds": [
+        "paolo_tocco"
+      ],
+      "description": "",
+      "slots": [
+        {
+          "days": "DAILY",
+          "start": "17:30",
+          "durationMinutes": 30
+        }
+      ]
+    },
+    {
+      "id": "black_coffee",
+      "title": "Black Coffee",
+      "speakerIds": [
+        "claudio_bosco"
+      ],
+      "description": "",
+      "slots": [
+        {
+          "days": "DAILY",
+          "start": "18:00",
+          "durationMinutes": 60
+        }
+      ]
+    },
+    {
+      "id": "soul_brillante",
+      "title": "Soul Brillante",
+      "speakerIds": [
+        "daniele_bengi_benati",
+        "franz_di_maggio"
+      ],
+      "description": "Stevie Wonder ha cantato in italiano? E Nat King Cole? Da Napoli alla via Emilia, tra futuro e storia della musica che ti obbliga a ballare, con la preparazione di un top player del settore. Un'appassionante ricerca musicale che parte dal soul in salsa italica: dal passato glorioso degli anni ruggenti di R&B, funky e soul alle strepitose novità che emergono in questi anni. Condotto da un musicista, compositore e cantante al centro del movimento da sempre: Daniele \"Bengi\" Benati.",
+      "slots": [
+        {
+          "days": "DAILY",
+          "start": "19:00",
+          "durationMinutes": 60
+        }
+      ]
+    },
+    {
+      "id": "soul_food",
+      "title": "Soul Food",
+      "speakerIds": [
+        "daniele_lucca"
+      ],
+      "description": "La musica più bella del mondo. Se la musica è \"cibo per l'anima\", il pre-serale di Visionair vi sazia di calde suggestioni con splendide selezioni musicali capaci di farvi vibrare interiormente. Soul Food propone il meglio dell'R&B, del soul e del funk di sempre, condito da note jazzy insieme al meglio dell'easy listening e del contemporary nazionale e internazionale. Groovy, by Daniele Lucca.",
+      "slots": [
+        {
+          "days": "DAILY",
+          "start": "20:00",
+          "durationMinutes": 60
+        }
+      ]
+    },
+    {
+      "id": "nightrain_music_club",
+      "title": "The 8th NighTRain Music Club",
+      "speakerIds": [
+        "franz_di_maggio"
+      ],
+      "description": "Evoluzione del programma storico di Franz Di Maggio che compie 50 anni nel 2026: il prototipo cult della radiofonia elegante e raffinata. La musica più cool incontra le atmosfere esotiche e si fonde con i ritmi brasiliani e capoverdiani. Il club esclusivo dove culture, storie e persone straordinarie trovano spazio e tempo, nell'atmosfera addolcita dalle ombre della notte.",
+      "slots": [
+        {
+          "days": "DAILY",
+          "start": "21:00",
+          "durationMinutes": 120
+        }
+      ]
+    },
     {
       "id": "frequenze_nomadi",
       "title": "Frequenze Nomadi",
-      "host": "Alberto Menenti",
-      "description": "Border music, contaminazioni, ethno, world, jazz e canzone d'autore. Un viaggio sonoro fra confini geografici e culturali.",
-      "hostBio": "Alberto Menenti è formatore in performance musicale e conduttore radiofonico. Su Visionair cura Frequenze Nomadi, un programma dedicato alla musica di frontiera: contaminazioni, suoni etnici, world music, jazz e canzone d'autore.",
+      "speakerIds": [
+        "alberto_menenti",
+        "patrizia_bersan"
+      ],
+      "description": "Echi d'autore e suoni dal mondo. Un viaggio sonoro oltre i confini del mainstream. Frequenze Nomadi attraversa territori musicali spesso dimenticati dalle radio tradizionali: dalla canzone d'autore italiana e internazionale alle sonorità etniche e popolari di ogni latitudine, passando per esperimenti acustici, folk urbani, contaminazioni culturali e voci rare. Ogni puntata è un invito all'ascolto consapevole, uno spazio di resistenza sonora dove la musica diventa racconto, memoria, ricerca, identità.",
       "slots": [
-        {"day": "THURSDAY", "start": "21:00", "durationMinutes": 60}
+        {
+          "days": "DAILY",
+          "start": "23:00",
+          "durationMinutes": 120
+        }
       ]
     }
   ]

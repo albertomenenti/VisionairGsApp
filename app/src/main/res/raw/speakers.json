@@ -1,0 +1,245 @@
+{
+  "_comment": "Lista conduttori di Visionair Radio. Campo 'photo' = nome drawable senza prefisso path (vuoto se foto assente). Campo 'bio' = testo libero (vuoto = sezione bio nascosta nell'UI).",
+  "speakers": [
+    {
+      "id": "franz_di_maggio",
+      "name": "Franz Di Maggio",
+      "bio": "Station manager. Visionario dal 1974 sul treno della musica più trendy, sfogliando pagine di giornale… guidare una radio, dopo 50 anni in voce in 4 continenti è un punto di partenza, non di arrivo; un percorso senza limiti e frontiere, perché cos'è la radio se non la perfetta compagna di viaggio?",
+      "photo": "speaker_franz_di_maggio"
+    },
+    {
+      "id": "massimo_rocca",
+      "name": "Massimo Rocca",
+      "bio": "Direttore responsabile di testata giornalistica. In voce dal 1976: Radio Blu, Radio Tre, Area, CNR, Radio Capital. Ex direttore di Area ed ex presidente di Stampa Romana.",
+      "photo": "speaker_massimo_rocca"
+    },
+    {
+      "id": "daniele_lucca",
+      "name": "Daniele Lucca",
+      "bio": "Voce radiofonica inconfondibile, produttore radiotelevisivo, autore, podcaster (Wine Voice), buongustaio \"slow\", consulente e art-director di eventi nazionali di settore. Un narratore a tutto campo tra vino, cibo, musica. \"Cacciatore di teste\", affianca il direttore di palinsesto nella ricerca di eccellenze della radiofonia italiana. \"Le strade bianche del gusto\" è la sua produzione originale.",
+      "photo": "speaker_daniele_lucca"
+    },
+    {
+      "id": "marco_mangiarotti",
+      "name": "Marco Mangiarotti",
+      "bio": "Classe 1948. Esploratore curioso e studioso di musiche, cinema, libri del mondo. Vita a morsi e sorsi. Sempre. Cercando sempre un mare dove nuotare. Snob democratico, da magro chic; critico, giornalista, inviato per giornali, radio, tv. Sanremo nel destino, dal Tenco al Festival. Jazz nel sangue, scherma nel DNA. Cattivissimo forse, mai ideologico: libero, ostinato e contrario, ironico sempre. Creatore del titolo \"Torno Subito\" e centravanti di sfondamento.",
+      "photo": "speaker_marco_mangiarotti"
+    },
+    {
+      "id": "cristian_tava",
+      "name": "Cristian Tava",
+      "bio": "",
+      "photo": "speaker_cristian_tava"
+    },
+    {
+      "id": "alberto_menenti",
+      "name": "Alberto Menenti",
+      "bio": "Produttore discografico, critico musicale, profondo conoscitore di vita e miracoli della scena romana e non solo. Coordina l'area podcast del sito di Visionair Radio. Voce, con Patrizia Bersan, di \"Frequenze Nomadi\" dal lunedì al giovedì dalle 21 e tutte le mattine alle 6:03.",
+      "photo": "speaker_alberto_menenti"
+    },
+    {
+      "id": "alberto_zeppieri",
+      "name": "Alberto Zeppieri",
+      "bio": "Produttore discografico e autore, compositore, giornalista musicale e musicista. Lavora dal suo buen retiro dell'arcipelago di Capo Verde, ma torna spesso in Italia. Fresco vincitore della Targa Tenco come produttore del concept album \"Sarò Franco — canzoni inedite di Califano\". Fondatore di \"Virgin Radio Italy\" S.p.A., procuratore speciale per la discografia della Fondazione Lelio Luttazzi. È stato a lungo collaboratore di Sergio Endrigo (con cui aveva firmato due album e una ventina di canzoni), di Bruno Lauzi (producendo i suoi ultimi tre album) e di Cesária Évora, per la quale ha ideato e prodotto \"Capo Verde, Terra d'Amore\": una collana di 10 dischi per il World Food Programme dell'ONU, in collaborazione con Sony France e l'editore Lusafrica. Protagonista di \"Capo Verde Terra de Amor\" ogni giovedì alle 11:30.",
+      "photo": "speaker_alberto_zeppieri"
+    },
+    {
+      "id": "ernesto_bassignano",
+      "name": "Ernesto Bassignano",
+      "bio": "Il fantasista dei visionari. Conduttore radiofonico di lungo corso (\"Ho perso il trend\" – RAI), cantautore, critico musicale, giornalista. Uomo con la battuta sempre in tasca e la chitarra al collo. Una miniera di aneddoti sulla musica italiana e non solo, dal 1960 a oggi.",
+      "photo": "speaker_ernesto_bassignano"
+    },
+    {
+      "id": "daniele_bengi_benati",
+      "name": "Daniele \"Bengi\" Benati",
+      "bio": "Compositore, autore, produttore ed editore musicale. Anche conduttore radiofonico — ebbene sì, e visionario pure. Da oltre 30 anni cantante, chitarrista e produttore del gruppo Ridillo. Per radio e TV ha scritto e prodotto le sigle musicali di \"Techetechetè\" (dal 2019), \"Domenica Sportiva\", la sigla di \"Ballando con le Stelle\" insieme a Paolo Belli, e poi ancora \"Sabato Sport\" per Radio1, \"Turisti per caso\", \"Velisti per caso\", \"La Pupa e il Secchione\", \"Stasera Italia\" su Mediaset, \"Wedding Planners\", \"Wonder Stories\" e \"Celebrity Now\" per Sky. Dal 2006 collabora con Flippermusic nel mondo della Library Music, producendo oltre 20 album per Primrose Music. Condivide con Franz Di Maggio e Daniele Lucca la passione per la musica \"blackish\" anche sbiancata in italiano. Da qui nasce \"Soul Brillante\", titolo mutuato dal suo storico album per Ridillo.",
+      "photo": "speaker_daniele_bengi_benati"
+    },
+    {
+      "id": "barbara_schiavulli",
+      "name": "Barbara Schiavulli",
+      "bio": "",
+      "photo": "speaker_barbara_schiavulli"
+    },
+    {
+      "id": "enrico_de_angelis",
+      "name": "Enrico De Angelis",
+      "bio": "Giornalista, critico musicale, storico della canzone, divulgatore, operatore culturale. In materia di \"canzone d'autore\" — espressione coniata per la prima volta da lui stesso nel 1969 — ha scritto o curato numerosi libri, alcuni dei quali corredati di CD o DVD. Tra i suoi ultimi lavori: \"Luigi Tenco. Lontano lontano\" (Il Saggiatore, con Enrico Deregibus) e il doppio CD di inediti \"Piero Ciampi. Siamo in cattive acque\" (Squilibri). Ha operato all'interno del Club Tenco di Sanremo dall'anno di fondazione, il 1972, ed è stato per vent'anni il direttore artistico.",
+      "photo": "speaker_enrico_de_angelis"
+    },
+    {
+      "id": "italo_cucci",
+      "name": "Italo Cucci",
+      "bio": "",
+      "photo": "speaker_italo_cucci"
+    },
+    {
+      "id": "tiziana_campanella",
+      "name": "Tiziana \"Trilly\" Campanella",
+      "bio": "Nata e cresciuta in Pianura Padana, si trasferisce a Roma a 21 anni e, dopo svariati lavori, finalmente entra nel mondo della radio, dei DJ set e della fonia, fino al sospirato approdo al microfono. Dalla fondazione di Visionair Radio, Trilly è responsabile della sede di Roma. Conduce \"Il Pentafono — La sala prove di Visionair Radio\" dal lunedì al venerdì dalle 15 alle 18.",
+      "photo": "speaker_tiziana_campanella"
+    },
+    {
+      "id": "renzo_costa",
+      "name": "Renzo Costa",
+      "bio": "Per anni resident DJ in svariate discoteche in Piemonte negli anni '80 e protagonista di importanti tour promozionali nazionali, animatore in villaggi turistici e voce di importanti locali karaoke nel decennio successivo, passando dal canto al vinile e alla radio. Nel 2019 è ideatore e cofondatore dell'Associazione DiscoVintage. Nell'ambito dell'intrattenimento e della contestuale attività radiofonica è stato operativo in diverse emittenti locali, con una parentesi in un importante network nazionale. Con Giorgio Terzano è in onda il mercoledì alle 19.",
+      "photo": "speaker_renzo_costa"
+    },
+    {
+      "id": "giorgio_terzano",
+      "name": "Giorgio Terzano",
+      "bio": "",
+      "photo": "speaker_giorgio_terzano"
+    },
+    {
+      "id": "datta",
+      "name": "Sergio Datta",
+      "bio": "Sergio Datta e Maurizio De Stefani collaborano e suonano \"back to back\" dal 1991, unendo esperienza da DJ, radio e produzioni musicali — fra le quali spiccano quelle con Gigi D'Agostino degli anni '90. La loro unione bilancia nostalgia e innovazione, mantenendo forti radici nella scena piemontese. Continuano a esibirsi e produrre, restando punti di riferimento nel panorama dance italiano.",
+      "photo": "speaker_datta"
+    },
+    {
+      "id": "de_stefani",
+      "name": "Maurizio De Stefani",
+      "bio": "Sergio Datta e Maurizio De Stefani collaborano e suonano \"back to back\" dal 1991, unendo esperienza da DJ, radio e produzioni musicali — fra le quali spiccano quelle con Gigi D'Agostino degli anni '90. La loro unione bilancia nostalgia e innovazione, mantenendo forti radici nella scena piemontese. Continuano a esibirsi e produrre, restando punti di riferimento nel panorama dance italiano.",
+      "photo": "speaker_de_stefani"
+    },
+    {
+      "id": "gio_damiani",
+      "name": "Giò Damiani",
+      "bio": "DJ e produttore discografico con numerosi remix dance all'attivo. Anchor-man televisivo e speaker radiofonico dagli anni '80 su svariate emittenti piemontesi. Animazione ed intrattenimento i suoi must. \"Dance Fever\", il suo claim, è anche il titolo del suo programma, in onda ogni giovedì alle 19:00, dove propone la storia della musica dance.",
+      "photo": "speaker_gio_damiani"
+    },
+    {
+      "id": "franco_miele",
+      "name": "Franco Miele",
+      "bio": "Nato a Torino nel 1969, si innamora della radio all'età di dieci anni, quando suo zio Jerry lo porta in una delle tante radio libere di paese. Attore teatrale, doppiatore e forse… speaker/DJ. Diplomato presso la scuola \"Teatro delle Dieci\" di Torino diretta da Massimo Scaglione, conduce ogni martedì sera alle 19:00 \"Aggiungi un posto alla Consolle\", la rubrica dedicata al calcio vintage in cui opinionisti e giornalisti propongono ricorrenze storiche, aneddoti sportivi e qualche sorpresa.",
+      "photo": "speaker_franco_miele"
+    },
+    {
+      "id": "rudy_slanzy",
+      "name": "Rudy Slanzy",
+      "bio": "",
+      "photo": "speaker_rudy_slanzy"
+    },
+    {
+      "id": "alessia_pistolini",
+      "name": "Alessia Pistolini",
+      "bio": "",
+      "photo": "speaker_alessia_pistolini"
+    },
+    {
+      "id": "patrizia_bersan",
+      "name": "Patrizia Bersan",
+      "bio": "Sarda d'adozione, viaggiatrice curiosa di vocazione, amante della natura e della storia. Porta le sue emozioni dalla vista alla voce: e quale strumento migliore della radio? Con Alberto Menenti conduce \"Frequenze Nomadi\".",
+      "photo": "speaker_patrizia_bersan"
+    },
+    {
+      "id": "cinzia_pilo",
+      "name": "Cinzia Pilo",
+      "bio": "",
+      "photo": "speaker_cinzia_pilo"
+    },
+    {
+      "id": "renato_marengo",
+      "name": "Renato Marengo",
+      "bio": "Storico produttore discografico e scopritore di talenti. Giornalista, scrittore, autore e conduttore Rai. Direttore del mensile Cinecorriere e del contest \"L'Immagine del Suono\". Una delle voci più popolari della radio italiana.",
+      "photo": "speaker_renato_marengo"
+    },
+    {
+      "id": "marco_testoni",
+      "name": "Marco Testoni",
+      "bio": "Compositore, musicista, music supervisor. Le sue performance multimediali e musicali sono state presentate al Louvre di Parigi e al Macro di Roma. Dal 2020 è direttore del canale web TV Soundtrack City.",
+      "photo": "speaker_marco_testoni"
+    },
+    {
+      "id": "pier_augusto_stagi",
+      "name": "Pier Augusto Stagi",
+      "bio": "Direttore di Tuttobiciweb, appassionato e profondo conoscitore del mondo del ciclismo, amico dei campioni e dei gregari. Fornisce aneddoti, curiosità e anteprime di uno sport antico, popolare e affascinante che ci fa conoscere luoghi e personaggi sempre nuovi. In diretta ogni lunedì alle 10 in \"Strani giorni sport\".",
+      "photo": "speaker_pier_augusto_stagi"
+    },
+    {
+      "id": "stefano_vernole",
+      "name": "Stefano Vernole",
+      "bio": "Giornalista pubblicista, saggista e analista geopolitico. Vicepresidente del Centro Studi Eurasia Mediterraneo. Con Ettore Gatti e Massimo Rocca entra nel vivo dell'economia e della geopolitica il venerdì alle 9 con \"No Comment Economy\".",
+      "photo": "speaker_stefano_vernole"
+    },
+    {
+      "id": "ettore_gatti",
+      "name": "Ettore Gatti",
+      "bio": "Economista, studioso appassionato di storia dell'economia e del pensiero economico, di macroeconomia e di sviluppo territoriale e regionale. Ha svolto la sua carriera professionale presso una delle principali banche italiane, con crescenti ruoli di responsabilità nell'Ufficio Studi e poi nella pianificazione, nel marketing strategico, nella filantropia aziendale e nella responsabilità sociale d'impresa. È stato coordinatore scientifico della Rivista Milanese di Economia. In ambito accademico è stato cultore della materia di Economia regionale presso il Politecnico di Milano; attualmente svolge lo stesso ruolo presso l'Università Cattolica del Sacro Cuore di Milano, dove collabora con il Dipartimento di Politica Economica.",
+      "photo": "speaker_ettore_gatti"
+    },
+    {
+      "id": "paolo_tocco",
+      "name": "Paolo Tocco",
+      "bio": "Cantautore e promoter discografico che da oltre 20 anni gravita e vive nel giornalismo musicale e nel mondo delle radio libere. Collaboratore storico del team di Faenza, con il quale porta avanti da anni una rete di pubblicazioni, interviste e contenuti anche sul fronte radio.",
+      "photo": "speaker_paolo_tocco"
+    },
+    {
+      "id": "irina_turcanu",
+      "name": "Irina Turcanu",
+      "bio": "Romena alle radici, italiana alla chioma. Ama scrivere, leggere, viaggiare e porsi domande, spesso senza una risposta. Conduce con Franz Di Maggio \"Euphonia Match\", il campionato mondiale della musica, ogni venerdì e sabato alle 21.",
+      "photo": "speaker_irina_turcanu"
+    },
+    {
+      "id": "luciano_donofrio",
+      "name": "Luciano D'Onofrio",
+      "bio": "Si occupa di cinema e di cultura dal 1985 in ambito sociale, artistico e storico. Operatore di ripresa, montatore, fotografo, grafico, performer, scrittore e non-musicista. Attualmente lavora nella regia, nella produzione e nella distribuzione cinematografica, soprattutto di documentari. Come la stragrande maggioranza di coloro che lavorano in ambito culturale, l'unica cosa che non ha fatto in tutti questi anni è arricchirsi. La sua rubrica \"Cineeema\" è integrata ne \"Il Pentafono\".",
+      "photo": "speaker_luciano_donofrio"
+    },
+    {
+      "id": "stefano_balassone",
+      "name": "Stefano Balassone",
+      "bio": "Produttore TV, ex Consigliere di amministrazione RAI e Vicedirettore di Rai Tre al fianco di Angelo Guglielmi. Instancabile e proiettato verso il futuro, si confronta con l'AI senza esclusione di colpi.",
+      "photo": "speaker_stefano_balassone"
+    },
+    {
+      "id": "fabio_di_cocco",
+      "name": "Fabio Di Cocco",
+      "bio": "Attore, regista, volto televisivo (\"Splendida Cornice\" con Geppi Cucciari). Punto di riferimento nazionale del teatro sociale e di rievocazione storica. Cura la rubrica \"Teatrando\".",
+      "photo": "speaker_fabio_di_cocco"
+    },
+    {
+      "id": "valentina_paolino",
+      "name": "Valentina Paolino",
+      "bio": "Genovese, appassionata d'arte. È l'anima visionaria delle arti visive della radio: ci porta alla scoperta di mostre, eventi, luoghi insoliti dove respirare Arte.",
+      "photo": "speaker_valentina_paolino"
+    },
+    {
+      "id": "elsa_flacco",
+      "name": "Elsa Flacco",
+      "bio": "Scrittrice, ricercatrice, docente di letteratura. Soprattutto grande divoratrice di romanzi e saggi. Non a caso conduce la rubrica \"La biblioteca di Elsa\" all'interno de \"Il Pentafono\".",
+      "photo": "speaker_elsa_flacco"
+    },
+    {
+      "id": "samuele_zoia",
+      "name": "Samuele Zoia",
+      "bio": "",
+      "photo": "speaker_samuele_zoia"
+    },
+    {
+      "id": "lancastre_de_finisterre",
+      "name": "Lancastre de Finisterre",
+      "bio": "",
+      "photo": ""
+    },
+    {
+      "id": "claudio_bosco",
+      "name": "Claudio Bosco",
+      "bio": "",
+      "photo": ""
+    },
+    {
+      "id": "bobo_craxi",
+      "name": "Bobo Craxi",
+      "bio": "Politico e opinionista? Descrizione riduttiva. Bobo è un intellettuale a tutto campo, ironico e capace di lanciarsi in avventure di scrittura che prevedono anche satira e sorriso, come l'ultimo \"poliziottesco\" scritto a quattro mani con l'amico Fulvio Abbate. Nella sua \"La Mezzora di Bobo Craxi\" ha campo libero per sorprenderci ogni giovedì alle 11 con un programma imprevedibile e ricco di spunti.",
+      "photo": ""
+    },
+    {
+      "id": "domenico_agrizzi",
+      "name": "Domenico Agrizzi",
+      "bio": "Scrive di cinema, sport e attualità per MOW. Inviato ai festival più importanti (Venezia, Roma, Cannes), parla della settima arte ma guarda anche oltre lo schermo. Per Radio Visionair cura una rubrica settimanale sui film appena usciti in sala e sulle piattaforme, con uno sguardo su tutto ciò di cui si discute nell'industria. Appuntamento ogni giovedì alle 10:53.",
+      "photo": ""
+    }
+  ]
+}
