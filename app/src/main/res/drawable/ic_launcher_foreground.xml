@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Foreground dell'icona adattiva (Android 8+).
+    Il logo Visionair vettoriale: "V" stilizzata in oro + punto rosso centrale,
+    ispirata al logo ufficiale. Su Android precedente all'8 viene usata
+    l'icona bitmap in mipmap-*/ic_launcher.png che ha il logo fotografico.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Corpo della "V" in oro caldo -->
+    <path
+        android:fillColor="#D9B26B"
+        android:pathData="M18,22 L40,22 L54,62 L68,22 L90,22 L54,90 Z" />
+
+    <!-- Taglio interno della "V" (sfondo trasparente = nero del background) -->
+    <path
+        android:fillColor="#0F1B2D"
+        android:pathData="M30,22 L40,22 L54,62 L68,22 L78,22 L54,74 Z" />
+
+    <!-- Punto rosso al centro, sopra l'incrocio della V (come nel logo) -->
+    <path
+        android:fillColor="#CC2200"
+        android:pathData="M54,38 m-5,0 a5,5 0 1,0 10,0 a5,5 0 1,0 -10,0" />
+
+</vector>
