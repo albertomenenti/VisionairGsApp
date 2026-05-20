@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.VisionairGsApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/visionair_gold</item>
+        <item name="colorOnPrimary">@color/visionair_blue</item>
+        <item name="colorPrimaryContainer">@color/visionair_gold_light</item>
+        <item name="colorOnPrimaryContainer">@color/visionair_blue_dark</item>
+        <item name="colorSurface">@color/visionair_surface_light</item>
+        <item name="colorOnSurface">@color/visionair_on_surface_dark</item>
+        <item name="android:statusBarColor" tools:targetApi="21">@color/visionair_blue</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+    </style>
+</resources>
