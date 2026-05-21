@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Theme.VisionairGsApp" parent="Theme.Material3.DayNight.NoActionBar">
+<resources>
+    <!--
+        Tema fisso scuro: usa Material3.Dark (non DayNight) così l'app è
+        sempre in modalità dark indipendentemente dall'impostazione di sistema.
+    -->
+    <style name="Theme.VisionairGsApp" parent="Theme.Material3.Dark.NoActionBar">
+        <!-- Primario: oro Visionair -->
         <item name="colorPrimary">@color/visionair_gold</item>
-        <item name="colorOnPrimary">@color/visionair_blue</item>
-        <item name="colorPrimaryContainer">@color/visionair_gold_light</item>
-        <item name="colorOnPrimaryContainer">@color/visionair_blue_dark</item>
-        <item name="colorSurface">@color/visionair_surface_light</item>
-        <item name="colorOnSurface">@color/visionair_on_surface_dark</item>
-        <item name="android:statusBarColor" tools:targetApi="21">@color/visionair_blue</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+        <item name="colorOnPrimary">@color/antracite_bg</item>
+        <item name="colorPrimaryContainer">@color/antracite_surface_variant</item>
+        <item name="colorOnPrimaryContainer">@color/visionair_gold_light</item>
+
+        <!-- Superficie -->
+        <item name="colorSurface">@color/antracite_bg</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/antracite_surface</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+
+        <!-- Sfondo generale -->
+        <item name="android:colorBackground">@color/antracite_bg</item>
+
+        <!-- Bordi e separatori -->
+        <item name="colorOutline">@color/antracite_outline</item>
+        <item name="colorOutlineVariant">@color/antracite_surface_variant</item>
+
+        <!-- Status bar scura -->
+        <item name="android:statusBarColor">@color/antracite_bg</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 </resources>

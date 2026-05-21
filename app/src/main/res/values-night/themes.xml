@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Theme.VisionairGsApp" parent="Theme.Material3.DayNight.NoActionBar">
+<resources>
+    <!-- Tema notturno = stesso del tema base (già scuro) -->
+    <style name="Theme.VisionairGsApp" parent="Theme.Material3.Dark.NoActionBar">
         <item name="colorPrimary">@color/visionair_gold</item>
-        <item name="colorOnPrimary">@color/visionair_blue</item>
-        <item name="colorPrimaryContainer">@color/visionair_blue_dark</item>
+        <item name="colorOnPrimary">@color/antracite_bg</item>
+        <item name="colorPrimaryContainer">@color/antracite_surface_variant</item>
         <item name="colorOnPrimaryContainer">@color/visionair_gold_light</item>
-        <item name="colorSurface">@color/visionair_blue</item>
-        <item name="colorOnSurface">@color/visionair_on_surface_light</item>
-        <item name="colorSurfaceVariant">@color/visionair_surface_variant_dark</item>
-        <item name="android:statusBarColor" tools:targetApi="21">@color/visionair_blue_dark</item>
+        <item name="colorSurface">@color/antracite_bg</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorSurfaceVariant">@color/antracite_surface</item>
+        <item name="colorOnSurfaceVariant">@color/text_secondary</item>
+        <item name="android:colorBackground">@color/antracite_bg</item>
+        <item name="colorOutline">@color/antracite_outline</item>
+        <item name="colorOutlineVariant">@color/antracite_surface_variant</item>
+        <item name="android:statusBarColor">@color/antracite_bg</item>
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 </resources>

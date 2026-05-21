@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Palette ispirata a "Golden Stream": blu notte + oro caldo -->
-    <color name="visionair_blue">#0F1B2D</color>
-    <color name="visionair_blue_dark">#070D17</color>
+    <!-- Grigi antracite -->
+    <color name="antracite_bg">#1E1E1E</color>
+    <color name="antracite_surface">#2A2A2A</color>
+    <color name="antracite_surface_variant">#333333</color>
+    <color name="antracite_outline">#505050</color>
+    <!-- Oro Visionair -->
     <color name="visionair_gold">#D9B26B</color>
     <color name="visionair_gold_light">#F2D9A6</color>
-    <color name="visionair_surface_light">#FAF8F4</color>
-    <color name="visionair_on_surface_dark">#0F1B2D</color>
-    <color name="visionair_on_surface_light">#F5F1E8</color>
-    <color name="visionair_surface_variant_dark">#1B2940</color>
+    <!-- Testo -->
+    <color name="text_primary">#F5F1E8</color>
+    <color name="text_secondary">#B8B0A0</color>
+    <!-- Retrocompat (usati in mipmap background) -->
+    <color name="visionair_blue">#0F1B2D</color>
+    <color name="visionair_blue_dark">#070D17</color>
 </resources>

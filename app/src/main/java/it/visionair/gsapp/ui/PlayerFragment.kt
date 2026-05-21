@@ -11,6 +11,7 @@ import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.session.MediaController
 import androidx.media3.session.SessionToken
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.common.util.concurrent.MoreExecutors
 import it.visionair.gsapp.PlaybackService
 import it.visionair.gsapp.ProgramSchedule
@@ -40,7 +41,19 @@ class PlayerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         schedule = ProgramSchedule(requireContext().applicationContext)
+
         binding.playPauseButton.setOnClickListener { togglePlayback() }
+
+        // Titolo programma → vai alla tab Programmi
+        binding.programTitle.setOnClickListener {
+            navigateTo(R.id.nav_programs)
+        }
+
+        // Nomi conduttori → vai alla tab Conduttori
+        binding.programHost.setOnClickListener {
+            navigateTo(R.id.nav_speakers)
+        }
+
         setLoadingState(true)
         renderNowPlaying()
     }
@@ -61,6 +74,12 @@ class PlayerFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    /** Seleziona una tab della bottom navigation dall'esterno del fragment. */
+    private fun navigateTo(navItemId: Int) {
+        activity?.findViewById<BottomNavigationView>(R.id.bottomNav)
+            ?.selectedItemId = navItemId
     }
 
     private fun connectToService() {
@@ -132,8 +151,10 @@ class PlayerFragment : Fragment() {
         binding.programTitle.text = now.program.title
 
         val hosts = now.speakerNames
-        binding.programHost.visibility = if (hosts.isBlank()) View.GONE else View.VISIBLE
-        if (hosts.isNotBlank()) {
+        if (hosts.isBlank()) {
+            binding.programHost.visibility = View.GONE
+        } else {
+            binding.programHost.visibility = View.VISIBLE
             binding.programHost.text = getString(R.string.host_prefix, hosts)
         }
 

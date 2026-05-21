@@ -14,7 +14,7 @@
         android:paddingHorizontal="24dp"
         android:paddingVertical="32dp">
 
-        <!-- Logo Visionair in alto, centrato -->
+        <!-- Logo -->
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/stationLogo"
             android:layout_width="160dp"
@@ -30,7 +30,7 @@
             android:id="@+id/stationName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             android:gravity="center"
             android:text="@string/app_name"
             android:textAppearance="?attr/textAppearanceHeadlineSmall"
@@ -59,7 +59,7 @@
             android:id="@+id/playPauseButton"
             android:layout_width="96dp"
             android:layout_height="96dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="24dp"
             android:src="@drawable/ic_play"
             android:contentDescription="@string/action_play"
             app:tint="?attr/colorOnPrimary"
@@ -75,7 +75,7 @@
             android:id="@+id/bufferingIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="10dp"
             android:indeterminate="true"
             android:visibility="gone"
             app:indicatorColor="?attr/colorPrimary"
@@ -88,9 +88,9 @@
             android:id="@+id/nowPlayingCard"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="32dp"
             app:cardCornerRadius="16dp"
-            app:cardElevation="2dp"
+            app:cardElevation="3dp"
             app:cardBackgroundColor="?attr/colorPrimaryContainer"
             app:contentPadding="20dp"
             app:layout_constraintTop_toBottomOf="@id/bufferingIndicator"
@@ -112,6 +112,11 @@
                     android:textAllCaps="true"
                     android:letterSpacing="0.1" />
 
+                <!--
+                    Titolo programma: cliccabile → apre tab Programmi.
+                    android:background="?attr/selectableItemBackground" aggiunge
+                    il feedback visivo al tap.
+                -->
                 <TextView
                     android:id="@+id/programTitle"
                     android:layout_width="match_parent"
@@ -120,16 +125,27 @@
                     android:textAppearance="?attr/textAppearanceTitleLarge"
                     android:textColor="?attr/colorOnPrimaryContainer"
                     android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:paddingVertical="4dp"
                     tools:text="Frequenze Nomadi" />
 
+                <!--
+                    Nomi conduttori: cliccabili → apre tab Conduttori.
+                    Colore oro per indicare visivamente che è un link.
+                -->
                 <TextView
                     android:id="@+id/programHost"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="6dp"
                     android:textAppearance="?attr/textAppearanceBodyMedium"
-                    android:textColor="?attr/colorOnPrimaryContainer"
-                    android:alpha="0.85"
+                    android:textColor="@color/visionair_gold"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground"
+                    android:paddingVertical="4dp"
                     tools:text="Con Alberto Menenti · Patrizia Bersan" />
 
                 <TextView
@@ -140,8 +156,8 @@
                     android:lineSpacingMultiplier="1.25"
                     android:textAppearance="?attr/textAppearanceBodySmall"
                     android:textColor="?attr/colorOnPrimaryContainer"
-                    android:alpha="0.95"
                     tools:text="Border music, contaminazioni, ethno..." />
+
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
