@@ -13,8 +13,8 @@ android {
         applicationId = "it.visionair.gsapp"
         minSdk = 21          // Android 5.0 (Lollipop) - copre 99%+ dei dispositivi attivi
         targetSdk = 34       // Android 14
-        versionCode = 3
-        versionName = "1.2.0"
+        versionCode = 5
+        versionName = "1.4.0"
 
         // Locale di fallback: italiano
         resourceConfigurations.addAll(listOf("it", "en"))
