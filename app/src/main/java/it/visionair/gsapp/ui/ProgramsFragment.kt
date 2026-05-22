@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import it.visionair.gsapp.ProgramSchedule
 import it.visionair.gsapp.databinding.FragmentProgramsBinding
 
@@ -23,16 +24,35 @@ class ProgramsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val schedule = ProgramSchedule(requireContext().applicationContext)
-        // Ordino i programmi per orario di inizio del primo slot, così la lista
-        // segue il flusso della giornata.
+
         val sorted = schedule.allPrograms().sortedBy {
             it.slots.firstOrNull()?.start?.toSecondOfDay() ?: Int.MAX_VALUE
         }
+
         binding.programsList.adapter = ProgramAdapter(sorted, schedule)
+
+        // Se il fragment è stato aperto con uno scrollToId, scorri all'elemento giusto.
+        arguments?.getString(ARG_SCROLL_TO)?.let { targetId ->
+            val idx = sorted.indexOfFirst { it.id == targetId }
+            if (idx >= 0) {
+                (binding.programsList.layoutManager as? LinearLayoutManager)
+                    ?.scrollToPositionWithOffset(idx, 0)
+            }
+        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+        private const val ARG_SCROLL_TO = "scrollToId"
+
+        fun newInstance(scrollToId: String? = null) = ProgramsFragment().apply {
+            if (scrollToId != null) {
+                arguments = Bundle().apply { putString(ARG_SCROLL_TO, scrollToId) }
+            }
+        }
     }
 }

@@ -2,6 +2,11 @@ package it.visionair.gsapp.ui
 
 import android.content.ComponentName
 import android.os.Bundle
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.TextPaint
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,12 +16,13 @@ import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.session.MediaController
 import androidx.media3.session.SessionToken
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.common.util.concurrent.MoreExecutors
 import it.visionair.gsapp.PlaybackService
 import it.visionair.gsapp.ProgramSchedule
 import it.visionair.gsapp.R
 import it.visionair.gsapp.databinding.FragmentPlayerBinding
+import it.visionair.gsapp.model.NowPlaying
+import it.visionair.gsapp.model.Speaker
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -30,6 +36,7 @@ class PlayerFragment : Fragment() {
     private var mediaController: MediaController? = null
     private lateinit var schedule: ProgramSchedule
     private var refreshJob: Job? = null
+    private var currentNowPlaying: NowPlaying? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -44,15 +51,15 @@ class PlayerFragment : Fragment() {
 
         binding.playPauseButton.setOnClickListener { togglePlayback() }
 
-        // Titolo programma → vai alla tab Programmi
+        // Titolo programma → tab Programmi scrollata al programma corrente
         binding.programTitle.setOnClickListener {
-            navigateTo(R.id.nav_programs)
+            currentNowPlaying?.program?.id?.let { id ->
+                (requireActivity() as? NavigationCallback)?.navigateToProgram(id)
+            }
         }
 
-        // Nomi conduttori → vai alla tab Conduttori
-        binding.programHost.setOnClickListener {
-            navigateTo(R.id.nav_speakers)
-        }
+        // I conduttori vengono resi cliccabili singolarmente in renderNowPlaying()
+        binding.programHost.movementMethod = LinkMovementMethod.getInstance()
 
         setLoadingState(true)
         renderNowPlaying()
@@ -76,48 +83,33 @@ class PlayerFragment : Fragment() {
         _binding = null
     }
 
-    /** Seleziona una tab della bottom navigation dall'esterno del fragment. */
-    private fun navigateTo(navItemId: Int) {
-        activity?.findViewById<BottomNavigationView>(R.id.bottomNav)
-            ?.selectedItemId = navItemId
-    }
-
     private fun connectToService() {
         val token = SessionToken(
             requireContext(),
             ComponentName(requireContext(), PlaybackService::class.java)
         )
         val future = MediaController.Builder(requireContext(), token).buildAsync()
-        future.addListener(
-            {
-                if (future.isDone && !future.isCancelled && _binding != null) {
-                    mediaController = future.get()
-                    mediaController?.addListener(playerListener)
-                    setLoadingState(false)
-                    updatePlayPauseIcon()
-                }
-            },
-            MoreExecutors.directExecutor()
-        )
+        future.addListener({
+            if (future.isDone && !future.isCancelled && _binding != null) {
+                mediaController = future.get()
+                mediaController?.addListener(playerListener)
+                setLoadingState(false)
+                updatePlayPauseIcon()
+            }
+        }, MoreExecutors.directExecutor())
     }
 
     private fun togglePlayback() {
-        val controller = mediaController ?: return
-        if (controller.isPlaying) {
-            controller.pause()
-        } else {
-            if (controller.playbackState == Player.STATE_IDLE) controller.prepare()
-            controller.play()
-        }
+        val c = mediaController ?: return
+        if (c.isPlaying) c.pause()
+        else { if (c.playbackState == Player.STATE_IDLE) c.prepare(); c.play() }
     }
 
     private val playerListener = object : Player.Listener {
-        override fun onIsPlayingChanged(isPlaying: Boolean) {
-            updatePlayPauseIcon()
-        }
-        override fun onPlaybackStateChanged(playbackState: Int) {
+        override fun onIsPlayingChanged(isPlaying: Boolean) = updatePlayPauseIcon()
+        override fun onPlaybackStateChanged(state: Int) {
             _binding?.bufferingIndicator?.visibility =
-                if (playbackState == Player.STATE_BUFFERING) View.VISIBLE else View.GONE
+                if (state == Player.STATE_BUFFERING) View.VISIBLE else View.GONE
         }
     }
 
@@ -138,28 +130,63 @@ class PlayerFragment : Fragment() {
     private fun startNowPlayingRefresh() {
         refreshJob?.cancel()
         refreshJob = lifecycleScope.launch {
-            while (true) {
-                renderNowPlaying()
-                delay(30_000L)
-            }
+            while (true) { renderNowPlaying(); delay(30_000L) }
         }
     }
 
     private fun renderNowPlaying() {
         if (_binding == null) return
         val now = schedule.nowPlaying()
+        currentNowPlaying = now
+
         binding.programTitle.text = now.program.title
 
-        val hosts = now.speakerNames
-        if (hosts.isBlank()) {
+        if (now.speakers.isEmpty()) {
             binding.programHost.visibility = View.GONE
         } else {
             binding.programHost.visibility = View.VISIBLE
-            binding.programHost.text = getString(R.string.host_prefix, hosts)
+            binding.programHost.text = buildClickableHosts(now.speakers)
         }
 
         val desc = now.program.description
         binding.programDescription.text = desc
         binding.programDescription.visibility = if (desc.isBlank()) View.GONE else View.VISIBLE
+    }
+
+    /**
+     * Costruisce una SpannableString "Con Nome1 · Nome2 · Nome3" dove ogni nome
+     * è un ClickableSpan in oro che naviga al conduttore nella tab Conduttori.
+     */
+    private fun buildClickableHosts(speakers: List<Speaker>): SpannableString {
+        val separator = " · "
+        val prefix = getString(R.string.host_prefix, "").trimEnd() + " "   // "Con "
+        val sb = StringBuilder(prefix)
+        speakers.forEachIndexed { i, s ->
+            sb.append(s.name)
+            if (i < speakers.lastIndex) sb.append(separator)
+        }
+        val span = SpannableString(sb)
+
+        val goldColor = requireContext().getColor(R.color.visionair_gold)
+
+        var cursor = prefix.length
+        speakers.forEach { speaker ->
+            val nameEnd = cursor + speaker.name.length
+            span.setSpan(
+                object : ClickableSpan() {
+                    override fun onClick(v: View) {
+                        (requireActivity() as? NavigationCallback)
+                            ?.navigateToSpeaker(speaker.id)
+                    }
+                    override fun updateDrawState(ds: TextPaint) {
+                        ds.color = goldColor
+                        ds.isUnderlineText = false   // link oro senza sottolineatura
+                    }
+                },
+                cursor, nameEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+            cursor = nameEnd + separator.length
+        }
+        return span
     }
 }
