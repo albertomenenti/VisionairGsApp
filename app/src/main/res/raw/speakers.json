@@ -28,13 +28,13 @@
     {
       "id": "cristian_tava",
       "name": "Cristian Tava",
-      "bio": "",
+      "bio": "Fondatore del progetto Villaggio Saggio, promuove da anni l'economia circolare e sostenibile. Da Milano si è trasferito in un borgo medievale delle Marche per ritrovare il suo tempo e la voce della comunità.",
       "photo": "speaker_cristian_tava"
     },
     {
       "id": "alberto_menenti",
       "name": "Alberto Menenti",
-      "bio": "Produttore discografico, critico musicale, profondo conoscitore di vita e miracoli della scena romana e non solo. Coordina l'area podcast del sito di Visionair Radio. Voce, con Patrizia Bersan, di \"Frequenze Nomadi\" dal lunedì al giovedì dalle 21 e tutte le mattine alle 6:03.",
+      "bio": "È il Project Manager della radio. Produttore discografico, critico musicale, profondo conoscitore della scena musicale romana e non solo. Ideatore del format \"Frequenze Nomadi\", lo conduce in voce con Patrizia Bersan e Alessia Pistolini.",
       "photo": "speaker_alberto_menenti"
     },
     {
@@ -58,7 +58,7 @@
     {
       "id": "barbara_schiavulli",
       "name": "Barbara Schiavulli",
-      "bio": "",
+      "bio": "Giornalista, corrispondente di guerra e attivista. Cura per Visionair il Notiziario Radiobullets: geopolitica, politiche di genere, questioni sociali.",
       "photo": "speaker_barbara_schiavulli"
     },
     {
@@ -70,7 +70,7 @@
     {
       "id": "italo_cucci",
       "name": "Italo Cucci",
-      "bio": "",
+      "bio": "Decano del giornalismo sportivo italiano. Penna autorevole e voce inconfondibile, ospite di \"No Comment\".",
       "photo": "speaker_italo_cucci"
     },
     {
@@ -88,7 +88,7 @@
     {
       "id": "giorgio_terzano",
       "name": "Giorgio Terzano",
-      "bio": "",
+      "bio": "Conduttore di Disco Vintage Supercharts insieme a Renzo Costa: viaggio tra le classifiche del passato e i successi del momento.",
       "photo": "speaker_giorgio_terzano"
     },
     {
@@ -118,13 +118,13 @@
     {
       "id": "rudy_slanzy",
       "name": "Rudy Slanzy",
-      "bio": "",
+      "bio": "DJ e voce radiofonica, contributor di Visionair Radio.",
       "photo": "speaker_rudy_slanzy"
     },
     {
       "id": "alessia_pistolini",
       "name": "Alessia Pistolini",
-      "bio": "",
+      "bio": "In attività da oltre venti anni nell'ambito della critica musicale, occupandosi in particolare di canzone d'autore italiana. Ha collaborato con testate musicali come L'isola che non c'era, Il Mucchio Selvaggio, Blogfoolk e altre. Voce e contributor di Visionair Radio, co-conduttrice di \"Frequenze Nomadi\".",
       "photo": "speaker_alessia_pistolini"
     },
     {
@@ -136,7 +136,7 @@
     {
       "id": "cinzia_pilo",
       "name": "Cinzia Pilo",
-      "bio": "",
+      "bio": "Manager, saggista, attivista. Conduce con Franz Di Maggio \"Sheroes\": donne che hanno cambiato la musica rock e il mondo. Un viaggio in sei decenni di rivoluzioni culturali, sociali e politiche.",
       "photo": "speaker_cinzia_pilo"
     },
     {
@@ -214,31 +214,13 @@
     {
       "id": "samuele_zoia",
       "name": "Samuele Zoia",
-      "bio": "",
+      "bio": "Oltre ad essere voce e contributor di Visionair Radio, si occupa dell'intera infrastruttura tecnologica della radio. È lui che vi permette di ascoltarci!",
       "photo": "speaker_samuele_zoia"
     },
     {
       "id": "lancastre_de_finisterre",
       "name": "Lancastre de Finisterre",
-      "bio": "",
-      "photo": ""
-    },
-    {
-      "id": "claudio_bosco",
-      "name": "Claudio Bosco",
-      "bio": "",
-      "photo": ""
-    },
-    {
-      "id": "bobo_craxi",
-      "name": "Bobo Craxi",
-      "bio": "Politico e opinionista? Descrizione riduttiva. Bobo è un intellettuale a tutto campo, ironico e capace di lanciarsi in avventure di scrittura che prevedono anche satira e sorriso, come l'ultimo \"poliziottesco\" scritto a quattro mani con l'amico Fulvio Abbate. Nella sua \"La Mezzora di Bobo Craxi\" ha campo libero per sorprenderci ogni giovedì alle 11 con un programma imprevedibile e ricco di spunti.",
-      "photo": ""
-    },
-    {
-      "id": "domenico_agrizzi",
-      "name": "Domenico Agrizzi",
-      "bio": "Scrive di cinema, sport e attualità per MOW. Inviato ai festival più importanti (Venezia, Roma, Cannes), parla della settima arte ma guarda anche oltre lo schermo. Per Radio Visionair cura una rubrica settimanale sui film appena usciti in sala e sulle piattaforme, con uno sguardo su tutto ciò di cui si discute nell'industria. Appuntamento ogni giovedì alle 10:53.",
+      "bio": "Un DJ evergreen che ha mosso i suoi primi passi nel mondo della mitica Motown e ha sempre difeso la bandiera del funky anche quando il genere veniva snobbato dai grandi circuiti. Oggi che quei grandi successi sono tornati a far ballare e sognare tanti, ci presenta il dj set perfetto.",
       "photo": ""
     }
   ]
